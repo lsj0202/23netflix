@@ -5,11 +5,17 @@ const Index = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    if (window.scrollY > 50) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    });
+
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
   }, []);
 
   return (

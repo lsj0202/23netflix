@@ -30,13 +30,10 @@ const Index = () => {
     });
     setMovie(movieDetail);
   };
-  console.log(movie);
-
   const truncate = (str) => {
     return str?.length > 100 ? str.substring(0, 99) + "..." : str;
   };
 
-  console.log("movie", movie);
   if (!isClicked) {
     return (
       <header
@@ -92,7 +89,7 @@ const Iframe = styled.iframe`
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.65;
+  opacity: 0.85;
   border: none;
 
   &::after {
